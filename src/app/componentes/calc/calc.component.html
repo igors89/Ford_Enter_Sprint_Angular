@@ -1,0 +1,26 @@
+<div>
+    <h2>Calculadora com NgModel</h2>
+    <div>
+        <label for="num1">Primeiro Numero:</label>
+        <input type="number" placeholder="Digite o primeiro numero" id="num1" [(ngModel)="numero1"]>
+    </div>
+    <div>
+        <label for="op">Operação</label>
+        <select name="" id="op">
+            <option value="+">Somar</option>
+            <option value="-">Subtrair</option>
+            <option value="*">Multiplicar</option>
+            <option value="/">Dividir</option>
+        </select>
+    </div>
+    <div>
+        <label for="num2">Primeiro Numero:</label>
+        <input type="number" placeholder="Digite o segundo numero" id="num2" [(ngModel)="numero2"]>
+    </div>
+
+    <button (click)="calcular()">Calcular</button>
+
+    <div>
+        <h3> {{ resultado }}</h3>
+    </div>
+</div>
