@@ -1,4 +1,4 @@
-import { Login } from './../../../login';
+import { Usuario } from './../../../login';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -12,8 +12,8 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  login(user: string, senha: string): Observable<Login[]> {
-    return this.http.post<Login[]>(`${this.API}/login`,{ user, senha });
+  login(user: string, senha: string): Observable<Usuario> {
+    return this.http.post<Usuario>(`${this.API}/login`,{ user, senha });
   }
 }
 

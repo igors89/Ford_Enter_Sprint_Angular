@@ -1,12 +1,22 @@
 import { Component } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { Usuario } from '../../../../login';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login-form',
-  imports: [ReactiveFormsModule],
+  imports: [FormsModule],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.css'
 })
 export class LoginFormComponent {
 
+    loginForm: Usuario = {
+        user: '',
+        senha:''
+    }
+
+    login(){
+        console.log(this.loginForm.user);
+        console.log(this.loginForm.senha);
+    }
 }
