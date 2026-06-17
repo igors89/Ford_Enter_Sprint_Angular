@@ -1,7 +1,7 @@
 import { Usuario } from './../../../login';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,15 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  login(user: string, senha: string): Observable<Usuario> {
-    return this.http.post<Usuario>(`${this.API}/login`,{ user, senha });
+  login(nome: string, senha: string): Observable<Usuario> {
+    return this.http.post<Usuario>(`${this.API}/login`,{ nome, senha })
+    .pipe(
+      tap(
+        user => {
+          sessionStorage.setItem("email", user.email)
+        }
+      )
+    )
   }
 }
 
