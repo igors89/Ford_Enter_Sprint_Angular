@@ -9,4 +9,8 @@ import { LoginFormComponent } from "../login-form/login-form.component";
 })
 export class LoginComponent {
 
+  ngOnInit(){
+    sessionStorage.clear();
+  }
+
 }
