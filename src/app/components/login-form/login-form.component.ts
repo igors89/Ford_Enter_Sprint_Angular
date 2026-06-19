@@ -42,7 +42,7 @@ export class LoginFormComponent {
               return
             }
           },
-          next: (res) => {
+          next: () => {
             this.router.navigate(['home'])
           }
         });
