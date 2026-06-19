@@ -46,5 +46,5 @@ export class LoginFormComponent {
             this.router.navigate(['home'])
           }
         });
+      }
     }
-}
