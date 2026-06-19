@@ -6,3 +6,7 @@ export interface Veiculos {
   softwareUpdates: number
   img: string
 }
+
+export interface ApiResponseVeiculos {
+  vehicles: Veiculos[];
+}

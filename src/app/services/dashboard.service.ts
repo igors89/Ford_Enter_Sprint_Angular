@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Veiculos } from '../models/veiculos';
+import { ApiResponseVeiculos } from '../models/veiculos';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,8 @@ export class DashboardService {
 
   constructor(private http: HttpClient) { }
 
-  getVeiculos(): Observable<Veiculos[]>{
-    return this.http.get<Veiculos[]>(`${this.API}/vehicles`);
+  getVeiculos(): Observable<ApiResponseVeiculos>{
+    return this.http.get<ApiResponseVeiculos>(`${this.API}/vehicles`);
   }
 
   getVinInfo():void{}

@@ -44,9 +44,10 @@ export class DashboardComponent implements OnInit {
       error: () => {
         console.error("Erro interno! Recarregue a página ou tente novamente mais tarde!");
       },
-      next: (veiculos: any) => {
+      next: (veiculos) => {
         this.veiculos = veiculos.vehicles
-        console.log(this.veiculos);
+        this.veiculoSelecionado = this.veiculos[0]
+        console.log(this.veiculoSelecionado);
       }
     })
   }
