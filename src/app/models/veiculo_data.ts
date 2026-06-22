@@ -1,5 +1,5 @@
 export interface VeiculoData {
-  id?: number
+  id: number
   odometro: number
   nivelCombustivel: number
   status: string

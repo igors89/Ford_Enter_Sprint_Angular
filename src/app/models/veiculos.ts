@@ -1,5 +1,5 @@
 export interface Veiculos {
-  id?: number
+  id: number
   vehicle: string
   volumetotal: number
   connected: number

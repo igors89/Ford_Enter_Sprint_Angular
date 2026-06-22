@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 import { Veiculos } from '../../models/veiculos';
 import { DashboardService } from '../../services/dashboard.service';
-import { VeiculoData } from '../../models/veiculo_data';
 import { TabelaCarrosComponent } from '../tabela-carros/tabela-carros.component';
 import { NgFor } from '@angular/common';
 
@@ -23,14 +22,6 @@ export class DashboardComponent implements OnInit {
     softwareUpdates:0,
     vehicle:'',
     volumetotal:0
-  }
-
-  public veiculo_data: VeiculoData = {
-    odometro:-1,
-    nivelCombustivel:-1,
-    lat: -1,
-    long: -1,
-    status: ''
   }
 
   constructor(private dbservice: DashboardService){}
@@ -55,10 +46,10 @@ export class DashboardComponent implements OnInit {
   buscarDados():void{}
 
   onSelectChange(event: Event){
-    const id = (event.target as HTMLSelectElement).value
-    console.log(id);
-    this.veiculoSelecionado = this.veiculos[Number(id)-1]
-    console.log(this.veiculoSelecionado)
+    const id = parseInt((event.target as HTMLSelectElement).value)
+    const veiculo = this.veiculos.find((veiculo) => veiculo.id === id)
+    
+    if(veiculo) this.veiculoSelecionado = veiculo
     
   }
 
