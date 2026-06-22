@@ -1,17 +1,17 @@
 <section class="d-flex gap-3 justify-content-around">
   <div class="shadow border border-black p-3 rounded-2">
     <h2>Veículos</h2>
-    <select>
+    <select (change)="onSelectChange($event)">
       <option *ngFor="let v of veiculos" value="{{v.id}}">{{v.vehicle}}</option>
     </select>
   </div>
 
-  <app-card />
-  <app-card />
-  <app-card />
+  <app-card [titulo]="'Total de vendas'" [valor]="veiculoSelecionado.volumetotal"/>
+  <app-card [titulo]="'Conectados'" [valor]="veiculoSelecionado.connected"/>
+  <app-card [titulo]="'Upd. de Software'" [valor]="veiculoSelecionado.softwareUpdates"/>
 </section>
 
-<section>
+<section class="object-fit-sm-contain">
   <img src="{{veiculoSelecionado.img}}" alt="{{veiculoSelecionado.vehicle}}">
 </section>
 

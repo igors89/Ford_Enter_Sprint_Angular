@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
     img:'',
     softwareUpdates:0,
     vehicle:'',
-    volumeTotal:0
+    volumetotal:0
   }
 
   public veiculo_data: VeiculoData = {
@@ -47,11 +47,19 @@ export class DashboardComponent implements OnInit {
       next: (veiculos) => {
         this.veiculos = veiculos.vehicles
         this.veiculoSelecionado = this.veiculos[0]
-        console.log(this.veiculoSelecionado);
+        // console.log(this.veiculoSelecionado);
       }
     })
   }
 
   buscarDados():void{}
+
+  onSelectChange(event: Event){
+    const id = (event.target as HTMLSelectElement).value
+    console.log(id);
+    this.veiculoSelecionado = this.veiculos[Number(id)-1]
+    console.log(this.veiculoSelecionado)
+    
+  }
 
 }

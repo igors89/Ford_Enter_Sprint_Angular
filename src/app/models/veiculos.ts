@@ -1,7 +1,7 @@
 export interface Veiculos {
   id?: number
   vehicle: string
-  volumeTotal: number
+  volumetotal: number
   connected: number
   softwareUpdates: number
   img: string
