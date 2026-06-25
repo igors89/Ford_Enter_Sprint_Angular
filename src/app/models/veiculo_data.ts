@@ -1,4 +1,4 @@
-export interface VeiculoData {
+export type VeiculoData = {
   id: number
   odometro: number
   nivelCombustivel: number

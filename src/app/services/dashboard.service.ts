@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiResponseVeiculos } from '../models/veiculos';
+import { VeiculoData } from '../models/veiculo_data';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,8 @@ export class DashboardService {
     return this.http.get<ApiResponseVeiculos>(`${this.API}/vehicles`);
   }
 
-  getVinInfo():void{}
+  getVinInfo(vin: string):Observable<VeiculoData>{
+    return this.http.post<VeiculoData>(`${this.API}/vehicleData`,{vin})
+  }
 
 }
