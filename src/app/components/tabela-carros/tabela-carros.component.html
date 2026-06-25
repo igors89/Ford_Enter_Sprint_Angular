@@ -1,24 +1,24 @@
-<table class="mt-2 table">
+<table class="mt-2 table" style="table-layout: fixed;">
   <thead>
-    <tr>
-      <th class="px-4">VIN</th>
-      <th class="px-4">ODÔMETRO</th>
-      <th class="px-4">NÍVEL DO COMBUSTÍVEL</th>
-      <th class="px-4">STATUS</th>
-      <th class="px-4">LAT</th>
-      <th class="px-4">LONG</th>
+    <tr class="table-primary">
+      <th class="text-center px-2">VIN</th>
+      <th class="text-center px-2">ODÔMETRO</th>
+      <th class="text-center px-2">NÍVEL DO COMBUSTÍVEL</th>
+      <th class="text-center px-2">STATUS</th>
+      <th class="text-center px-2">LAT</th>
+      <th class="text-center px-2">LONG</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>
-        <input type="text" placeholder="2FRHDUYS2Y63NHD22454" (change)="buscarInfo($event)">
+    <tr class="mx-auto">
+      <td class="text-center px-2">
+        <input type="text" class="form-control" placeholder="2FRHDUYS2Y63NHD22454" (change)="buscarInfo($event)">
       </td>
-      <td class="px-4">{{veiculo_data.odometro}} Km</td>
-      <td class="px-4">{{veiculo_data.nivelCombustivel}}%</td>
-      <td class="px-4">{{veiculo_data.status}}</td>
-      <td class="px-4">{{veiculo_data.lat}}</td>
-      <td class="px-4">{{veiculo_data.long}}</td>
+      <td class="text-center px-2">{{veiculo_data.odometro}} Km</td>
+      <td class="text-center px-2">{{veiculo_data.nivelCombustivel}}%</td>
+      <td class="text-center px-2">{{veiculo_data.status}}</td>
+      <td class="text-center px-2">{{veiculo_data.lat}}</td>
+      <td class="text-center px-2">{{veiculo_data.long}}</td>
     </tr>
   </tbody>
 </table>
