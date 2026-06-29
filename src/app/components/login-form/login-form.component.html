@@ -1,4 +1,4 @@
-<form class="p-3 shadow">
+<form class="p-3">
   <div class="mb-3">
     <label for="usuario" class="form-label">Usuário:</label>
     <input type="text" class="form-control" id="usuario" [(ngModel)]="loginForm.nome" [ngModelOptions]="{standalone: true}">
@@ -6,6 +6,10 @@
   <div class="mb-3">
     <label for="senha" class="form-label">Senha:</label>
     <input type="password" class="form-control" id="senha" [(ngModel)]="loginForm.senha" [ngModelOptions]="{standalone: true}">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="login-auto">
+    <label class="form-check-label" for="login-auto">Logar automaticamente</label>
   </div>
   <button (click)="login()" type="submit" class="btn btn-primary">Entrar</button>
 </form>
