@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoginFormComponent } from "../login-form/login-form.component";
 
 @Component({
@@ -7,7 +7,7 @@ import { LoginFormComponent } from "../login-form/login-form.component";
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   ngOnInit(){
     sessionStorage.clear();

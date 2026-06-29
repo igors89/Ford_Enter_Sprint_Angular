@@ -12,8 +12,8 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  login(nome: string, senha: string): Observable<Usuario> {
-    return this.http.post<Usuario>(`${this.API}/login`,{ nome, senha })
+  login(usuario: Pick<Usuario, 'nome'|'senha'>): Observable<Usuario> {
+    return this.http.post<Usuario>(`${this.API}/login`,usuario)
     .pipe(
       tap(
         user => {

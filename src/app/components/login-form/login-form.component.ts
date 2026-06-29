@@ -21,9 +21,8 @@ export class LoginFormComponent {
       private router: Router
     ) { }
 
-    login(){
-        // console.log(this.loginForm.nome);
-        // console.log(this.loginForm.senha);
+    login(): void{
+      
         const nome = this.loginForm.nome;
         const senha = this.loginForm.senha;
 
@@ -31,7 +30,7 @@ export class LoginFormComponent {
           alert("Campo obrigatório não preenchido!");
           return;
         }
-        this.service.login(nome,senha).subscribe({
+        this.service.login(this.loginForm).subscribe({
           error: (err: any) => {
             if(err.status === 401) {
               alert("Usuário ou senha incorretos!")
