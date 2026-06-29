@@ -4,10 +4,11 @@ import { Veiculos } from '../../models/veiculos';
 import { DashboardService } from '../../services/dashboard.service';
 import { TabelaCarrosComponent } from '../tabela-carros/tabela-carros.component';
 import { NgFor } from '@angular/common';
+import { CabecalhoComponent } from '../cabecalho/cabecalho.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CardComponent, TabelaCarrosComponent, NgFor],
+  imports: [CardComponent, TabelaCarrosComponent, NgFor,CabecalhoComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })

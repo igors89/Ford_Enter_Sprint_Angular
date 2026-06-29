@@ -1,22 +1,27 @@
-<div class="container py-3 d-flex flex-column gap-3 text-center justify-content-center h-100">
-<section class="d-flex gap-3 flex-shrink-0 justify-content-around h-auto">
-  <div class="shadow border border-black p-3 rounded-2">
-    <h2>Veículos</h2>
-    <select (change)="onSelectChange($event)">
-      <option *ngFor="let v of veiculos" value="{{v.id}}">{{v.vehicle}}</option>
-    </select>
-  </div>
+<div class="d-flex flex-column vh-100">
+    <app-cabecalho class="flex-shrink-0"></app-cabecalho>
+    <div class="flex-grow-1" style="min-height: 0;">
+        <div class="container py-3 d-flex flex-column gap-3 text-center justify-content-center h-100">
+            <section class="d-flex gap-3 flex-shrink-0 justify-content-around h-auto">
+                <div class="shadow border border-black p-3 rounded-2">
+                    <h2>Veículos</h2>
+                    <select (change)="onSelectChange($event)">
+                    <option *ngFor="let v of veiculos" value="{{v.id}}">{{v.vehicle}}</option>
+                    </select>
+                </div>
 
-  <app-card [titulo]="'Total de vendas'" [valor]="veiculoSelecionado.volumetotal"/>
-  <app-card [titulo]="'Conectados'" [valor]="veiculoSelecionado.connected"/>
-  <app-card [titulo]="'Upd. de Software'" [valor]="veiculoSelecionado.softwareUpdates"/>
-</section>
+                <app-card [titulo]="'Total de vendas'" [valor]="veiculoSelecionado.volumetotal"/>
+                <app-card [titulo]="'Conectados'" [valor]="veiculoSelecionado.connected"/>
+                <app-card [titulo]="'Upd. de Software'" [valor]="veiculoSelecionado.softwareUpdates"/>
+            </section>
 
-<section class="flex-grow-1 d-flex justify-content-center align-items-center" style="min-height: 0;">
-  <img class="img-fluid h-100 object-fit-contain" src="{{veiculoSelecionado.img}}" alt="{{veiculoSelecionado.vehicle}}">
-</section>
+            <section class="flex-grow-1 d-flex justify-content-center align-items-center" style="min-height: 0;">
+                <img class="img-fluid h-100 object-fit-contain" src="{{veiculoSelecionado.img}}" alt="{{veiculoSelecionado.vehicle}}">
+            </section>
 
-<section class="w-100 flex-shrink-0">
-  <app-tabela-carros></app-tabela-carros>
-</section>
+            <section class="w-100 flex-shrink-0">
+                <app-tabela-carros></app-tabela-carros>
+            </section>
+        </div>
+    </div>
 </div>
