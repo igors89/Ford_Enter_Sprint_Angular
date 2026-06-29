@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { LoginService } from './../../services/login.service';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -5,7 +6,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.css'
 })
@@ -15,6 +16,8 @@ export class LoginFormComponent {
         nome: '',
         senha:''
     }
+
+    errorMessage: string | null = null;
 
     constructor(
       private service: LoginService,
@@ -31,15 +34,10 @@ export class LoginFormComponent {
           return;
         }
         this.service.login(this.loginForm).subscribe({
-          error: (err: any) => {
-            if(err.status === 401) {
-              alert("Usuário ou senha incorretos!")
-              return
-            }
-            if (err.status === 500) {
-              alert("Erro interno! Tente novamente mais tarde!")
-              return
-            }
+          error: (err) => {
+            this.errorMessage = err.error.message || "Usuário ou senha inválidos";
+            console.log(this.errorMessage);            
+            return
           },
           next: () => {
             this.router.navigate(['home'])
