@@ -16,7 +16,7 @@ export class TabelaCarrosComponent {
         nivelCombustivel:0,
         lat: 0,
         long: 0,
-        status: ''
+        status: '--'
     }
 
     constructor(private dshservice: DashboardService){}
@@ -30,7 +30,7 @@ export class TabelaCarrosComponent {
           this.veiculo_data.lat=0
           this.veiculo_data.long=0
           this.veiculo_data.nivelCombustivel=0
-          this.veiculo_data.status=''
+          this.veiculo_data.status='--'
         },
         next: (vdata: VeiculoData) => {
           this.veiculo_data = vdata

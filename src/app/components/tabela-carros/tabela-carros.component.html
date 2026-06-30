@@ -1,24 +1,26 @@
-<table class="table align-middle" style="table-layout: fixed;">
-  <thead>
-    <tr class="table-primary align-middle">
-      <th class="text-center px-2">VIN</th>
-      <th class="text-center px-2">ODÔMETRO</th>
-      <th class="text-center px-2">NÍVEL DO COMBUSTÍVEL</th>
-      <th class="text-center px-2">STATUS</th>
-      <th class="text-center px-2">LAT</th>
-      <th class="text-center px-2">LONG</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="mx-auto">
-      <td class="text-center px-2">
-        <input type="text" class="form-control" placeholder="2FRHDUYS2Y63NHD22454" (input)="buscarInfo($event)">
-      </td>
-      <td class="text-center px-2">{{veiculo_data.odometro}} Km</td>
-      <td class="text-center px-2">{{veiculo_data.nivelCombustivel}}%</td>
-      <td class="text-center px-2">{{veiculo_data.status}}</td>
-      <td class="text-center px-2">{{veiculo_data.lat}}</td>
-      <td class="text-center px-2">{{veiculo_data.long}}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table align-middle shadow table-responsive-xxl" style="table-layout: fixed;">
+      <thead>
+        <tr class="align-middle" style="--bs-table-bg:#1b357e; --bs-table-color: white;">
+          <th class="text-center px-2" >VIN</th>
+          <th class="text-center px-2">ODÔMETRO</th>
+          <th class="text-center px-2">NÍVEL DO COMBUSTÍVEL</th>
+          <th class="text-center px-2">STATUS</th>
+          <th class="text-center px-2">LAT</th>
+          <th class="text-center px-2">LONG</th>
+        </tr>
+      </thead>
+      <tbody class="table-light">
+        <tr class="mx-auto">
+          <td class="text-center px-2">
+            <input type="text" class="form-control" placeholder="2FRHDUYS2Y63NHD22454" (input)="buscarInfo($event)">
+          </td>
+          <td class="text-center px-2">{{veiculo_data.odometro}} Km</td>
+          <td class="text-center px-2">{{veiculo_data.nivelCombustivel}}%</td>
+          <td class="text-center px-2">{{veiculo_data.status}}</td>
+          <td class="text-center px-2">{{veiculo_data.lat}}</td>
+          <td class="text-center px-2">{{veiculo_data.long}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
