@@ -1,6 +1,6 @@
 <div class="d-flex flex-column vh-100 overflow-hidden">
     <app-cabecalho class="flex-shrink-0"></app-cabecalho>
-    <div class="flex-grow-1" style="min-height: 0;">
+    <div class="flex-grow-1 overflow-y-auto" style="min-height: 0;">
         <div class="px-md-4 px-2 py-3 d-flex flex-column gap-2 text-center h-100">
             <section class="d-flex justify-content-center h2">
                 <p style="color: #1b357e">Dashboard FORD</p>
@@ -20,7 +20,7 @@
                 <app-card [titulo]="'Upd. de Software'" [valor]="veiculoSelecionado.softwareUpdates"/>
             </section>
 
-            <section class="flex-grow-1 d-flex justify-content-center align-items-center" style="min-height: 300px;">
+            <section class="flex-grow-1 d-flex justify-content-center align-items-center" style="min-height: 180px;">
                 <img class="img-fluid h-100 object-fit-contain" src="{{veiculoSelecionado.img}}" alt="{{veiculoSelecionado.vehicle}}">
             </section>
 
